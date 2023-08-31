@@ -3,9 +3,8 @@ const cardContainer = document.getElementById("cardContainer");
 let cardData;
 
 // millisecond to hour, minute, second
-const milliToHour = (time) => {
+const millisecondToHour = (time) => {
     if (time) {
-        console.log(time)
         let second = Math.floor(time / 1000);
         let minute = Math.floor(second / 60);
         let hour = Math.floor(minute / 60);
@@ -77,8 +76,7 @@ const displayCards = (cardsData) => {
             const { category_id, thumbnail, title, authors, others } = data;
 
             // calculate time
-            const time = milliToHour(others?.posted_date);
-            // console.log(time);
+            const time = millisecondToHour(others?.posted_date);
 
             // creating card
             const div = document.createElement("div");
@@ -113,6 +111,7 @@ const displayCards = (cardsData) => {
             cardContainer.appendChild(div);
         });
     } else {
+        // when data is empty
         cardContainer.innerHTML = `
             <div class="card card-compact col-span-1 md:col-span-2 lg:col-span-4">
                 <figure>
@@ -124,5 +123,6 @@ const displayCards = (cardsData) => {
     }
 }
 
+// loading by default
 loadCategoryBtn();
 loadCardData("1000");
