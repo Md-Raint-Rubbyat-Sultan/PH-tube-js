@@ -20,7 +20,8 @@
                 extend: {
                     colors: {
                         redTh: "#FF1F3D",
-                        textClr: "#252525"
+                        textClr: "#252525",
+                        textMute: "#171717B2"
                     }
                 }
             }
@@ -30,7 +31,7 @@
 
 <body class="container mx-auto">
     <!-- header section -->
-    <header class="mt-8">
+    <header class="my-8">
         <!-- nav bar -->
         <nav>
             <div class="navbar bg-base-100">
@@ -45,7 +46,7 @@
                         </label>
                         <ul tabindex="0"
                             class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
+                            <li onclick="handelSortBtn()">
                                 <button>Sort by view</button>
                             </li>
                         </ul>
@@ -57,7 +58,7 @@
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
-                        <li class="btn">
+                        <li onclick="handelSortBtn()" class="btn">
                             Sort by view
                         </li>
                     </ul>
@@ -68,12 +69,18 @@
             </div>
         </nav>
     </header>
-    <hr class="w-[98%] mx-auto my-8">
+    <hr class="w-[98%] mx-auto">
     <!-- main section -->
     <main>
         <!-- category btn -->
         <section>
-            <div id="btnContainer">
+            <div id="btnContainer" class="my-8 flex flex-wrap justify-center items-center gap-6">
+
+            </div>
+        </section>
+        <!-- card section -->
+        <section>
+            <div id="cardContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-2 xl:px-0">
                 
             </div>
         </section>
