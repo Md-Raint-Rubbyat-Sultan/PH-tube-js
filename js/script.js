@@ -42,11 +42,10 @@ const displayCategoryBtn = (categories) => {
         const { category, category_id } = categoryType;
         const div = document.createElement("div");
         div.innerHTML = `
-            <button onclick="loadCardData('${category_id}')" class="btn">${category}</button>
+            <button onclick="loadCardData('${category_id}')" class="btn btnFocused">${category}</button>
         `;
         btnContainer.appendChild(div);
     });
-
 }
 
 // display cards
@@ -66,7 +65,7 @@ const displayCards = (cardsData) => {
             <div class="flex items-start">
                 <img src="${authors[0]?.profile_picture}" alt="${authors[0]?.profile_name}" class="w-10 h-10 me-3 rounded-full">
                 <div>
-                    <h2 class="card-title">${title}</h2>
+                    <h2 class="card-title text-textClr font-bold">${title}</h2>
                     <p class="my-2 text-textMute flex items-center">
                         ${authors[0]?.profile_name}
                         <span class="ms-2 ${authors[0]?.verified ? "block" : "hidden"}">
@@ -88,7 +87,7 @@ const displayCards = (cardsData) => {
                 <figure>
                     <img src="/assets/Icon.png" alt="Shoes" />
                 </figure>
-                <h2 class="text-center font-bold text-4xl my-8">Oops!! Sorry, There is no content here</h2>
+                <h2 class="text-center text-textClr font-bold text-4xl my-8">Oops!! Sorry, There is no content here</h2>
             </div>
         `
     }

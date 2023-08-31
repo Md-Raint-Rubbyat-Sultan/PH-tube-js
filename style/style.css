@@ -5,3 +5,9 @@
 *{
     font-family: 'Inter', sans-serif;
 }
+
+/* category btn */
+.btnFocused:focus{
+    background-color: #FF1F3D;
+    color: #fff;
+}
