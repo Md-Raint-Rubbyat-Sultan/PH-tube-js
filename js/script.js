@@ -2,6 +2,26 @@ const btnContainer = document.getElementById("btnContainer");
 const cardContainer = document.getElementById("cardContainer");
 let cardData;
 
+// millisecond to hour, minute, second
+const milliToHour = (time) => {
+    if (time) {
+        console.log(time)
+        let second = Math.floor(time / 1000);
+        let minute = Math.floor(second / 60);
+        let hour = Math.floor(minute / 60);
+
+        second = second % 60;
+        minute = minute % 60;
+        hour = hour % 24;
+
+        const newTime = `${hour.toString().padStart(2, "0")}hrs ${minute.toString().padStart(2, "0")}min ago`;
+        return newTime;
+    } else {
+        return "";
+    }
+}
+
+
 // loading categories btn
 const loadCategoryBtn = async () => {
     // fetching
@@ -55,12 +75,23 @@ const displayCards = (cardsData) => {
     if (cardsData.length > 0) {
         cardsData.forEach(data => {
             const { category_id, thumbnail, title, authors, others } = data;
+
+            // calculate time
+            const time = milliToHour(others?.posted_date);
+            // console.log(time);
+
+            // creating card
             const div = document.createElement("div");
             div.classList = "card card-compact";
             div.innerHTML = `
-        <figure>
-            <img src="${thumbnail}" alt="Shoes" class="h-52 w-full" />
-        </figure>
+        <div class="relative">
+            <figure>
+                <img src="${thumbnail}" alt="Shoes" class="h-52 w-full rounded-b-xl rounded-l-xl" />
+            </figure>
+            <div class="${others?.posted_date ? "block" : "hidden"} absolute bottom-4 right-4">
+                <p class="bg-minutes text-white p-1 rounded">${time}</p>
+            </div>
+        </div>
         <div class="card-body">
             <div class="flex items-start">
                 <img src="${authors[0]?.profile_picture}" alt="${authors[0]?.profile_name}" class="w-10 h-10 me-3 rounded-full">
