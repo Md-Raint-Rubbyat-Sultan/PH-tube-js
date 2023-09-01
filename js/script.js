@@ -48,7 +48,7 @@ const handelSortBtn = () => {
         const numA = parseFloat(numAText.slice(0, numAText.length - 1));
         const numB = parseFloat(numBText.slice(0, numBText.length - 1));
 
-        return numA - numB;
+        return numB - numA;
     });
     displayCards(newData);
 }
