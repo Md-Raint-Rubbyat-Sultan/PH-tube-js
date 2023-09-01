@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <!-- fav icon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- style.css file -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom tailwind css -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        redTh: "#FF1F3D",
+                        textClr: "#252525",
+                        textMute: "#171717B2",
+                        minutes: "#171717"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="container mx-auto px-2 lg:px-0">
+    <!-- blog header -->
+    <header>
+        <nav class="w-11/12 lg:w-3/4 mx-auto p-6 rounded-xl">
+            <h2 class="text-5xl text-textClr text-center font-semibold">Most frequently asked <span
+                    class="text-redTh">questions</span>?</h2>
+        </nav>
+    </header>
+    <!-- blog main -->
+    <main>
+        <!-- question no 1 -->
+        <div class="my-10">
+            <h3 class="text-3xl text-textClr text-center font-semibold">Question-1: Discuss the scope of var, let, and
+                const?</h3>
+            <!-- answer -->
+            <div class="overflow-x-auto my-8">
+                <table class="table table-zebra">
+                    <!-- head -->
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th class="text-center">var</th>
+                            <th class="text-center">let</th>
+                            <th class="text-center">const</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- row 1 -->
+                        <tr>
+                            <th>1</th>
+                            <td>Variables declared with "var" are function-scoped, meaning they are only accessible
+                                within the function where they are defined.</td>
+                            <td>Variables declared with "let" are block-scoped, which means they are limited in scope to
+                                the block (typically enclosed by curly braces {}) in which they are defined. This
+                                includes blocks within functions, loops, and conditional statements.</td>
+                            <td>Variables declared with "const" are also block-scoped, just like "let". They are limited
+                                in scope to the block in which they are defined.</td>
+                        </tr>
+                        <!-- row 2 -->
+                        <tr>
+                            <th>2</th>
+                            <td>"var" declarations are hoisted to the top of their containing function or global scope
+                                also known as Hoisting. This means you can use a "var" variable before it's declared in
+                                the code, although its value will be "undefined" until the assignment is encountered.
+                            </td>
+                            <td> Like "var", "let" declarations are hoisted to the top of their containing block but are
+                                not initialized. Trying to access a "let" variable before its declaration will result in
+                                a "ReferenceError".</td>
+                            <td> "const" declarations are hoisted to the top of their containing block but, like "let",
+                                are not initialized. Attempting to access a "const" variable before its declaration
+                                results in a "ReferenceError".</td>
+                        </tr>
+                        <!-- row 3 -->
+                        <tr>
+                            <th>3</th>
+                            <td>Variables declared with "var" can be reassigned and have their values changed.</td>
+                            <td>Variables declared with "let" can be reassigned, so their values can change over time.
+                            </td>
+                            <td>Variables declared with "const" cannot be reassigned after their initial value
+                                assignment. This makes them constant or immutable in the sense that their value cannot
+                                change once set.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- question no 2 -->
+        <div>
+            <h3 class="text-3xl text-textClr text-center font-semibold">Question-2: Tell us the use cases of undefined
+                and null?</h3>
+            <!-- answer -->
+            <div class="overflow-x-auto my-8">
+                <table class="table table-zebra">
+                    <!-- head -->
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th class="text-center">undefined</th>
+                            <th>VS</th>
+                            <th class="text-center">null</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- row 1 -->
+                        <tr>
+                            <th>1</th>
+                            <td>"undefined" represents a variable that has been declared but has not been assigned a
+                                value. It is also the default value of function parameters that are not provided when
+                                the function is called.</td>
+                            <td></td>
+                            <td>"null" represents the intentional absence of any object value or a variable
+                                intentionally set to no value or no object.</td>
+                        </tr>
+                        <!-- row 2 -->
+                        <tr>
+                            <th>2</th>
+                            <td>Common use cases for "undefined" include checking if a variable or property exists or if
+                                a function argument has been provided.</td>
+                            <td></td>
+                            <td>Common use cases for null include clearing or resetting variables or properties,
+                                indicating that an object doesn't have a particular value, and explicitly signaling that
+                                something is intentionally empty.</td>
+                        </tr>
+                        <!-- row 3 -->
+                        <tr>
+                            <th>3</th>
+                            <td>When a variable is declared but not assigned a value, it's automatically initialized
+                                with "undefined".</td>
+                            <td></td>
+                            <td>Unlike "undefined", "null" is explicitly set by the programmer to indicate that a
+                                variable should have no value or that a property is intentionally empty.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- question no 3 -->
+        <div class="my-10">
+            <h3 class="text-3xl text-textClr text-center font-semibold">Question-3: What do you mean by REST API?</h3>
+            <!-- answer -->
+            <div class="overflow-x-auto my-8">
+                <table class="table">
+                    <!-- head -->
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th class="text-center">REST API</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- row 1 -->
+                        <tr>
+                            <th>1</th>
+                            <td>Statelessness: REST APIs are designed to be stateless, which means that each request
+                                from a client to the server must contain all the information needed to understand and
+                                process the request. There should be no reliance on the server's previous requests or
+                                states. Statelessness simplifies server implementation and makes APIs more scalable.
+                            </td>
+                        </tr>
+                        <!-- row 2 -->
+                        <tr>
+                            <th>2</th>
+                            <td>Resources: In REST, everything is considered a resource, and each resource is identified
+                                by a unique URL (Uniform Resource Locator). Resources can represent data objects,
+                                services, or entities in the application. For example, a REST API for a book store might
+                                have resources like /books, /authors, and /orders.</td>
+                        <tr>
+                            <!-- row 3 -->
+                            <th>3</th>
+                            <td>HTTP Methods: REST APIs use standard HTTP methods (GET, POST, PUT, DELETE, etc.) to
+                                perform operations on resources. Each HTTP method has a specific meaning:
+                                <ul class="list-disc">
+                                    <li>GET: Retrieve data from a resource.</li>
+                                    <li>POST: Create a new resource.</li>
+                                    <li>PUT: Update an existing resource or create it if it doesn't exist.</li>
+                                    <li>DELETE: Remove a resource.</li>
+                                    <li>Other methods like PATCH, HEAD, and OPTIONS can also be used for specific
+                                        purposes.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- row 4 -->
+                        <tr>
+                            <th>4</th>
+                            <td>Uniform Interface: REST APIs follow a uniform and consistent interface design, which
+                                simplifies client-server communication. This includes using standard HTTP status codes
+                                to indicate the result of an operation (e.g., 200 for success, 404 for resource not
+                                found, 500 for server error).</td>
+                        <tr>
+                            <!-- row 5 -->
+                        <tr>
+                            <th>5</th>
+                            <td>Representation: Resources in REST are represented in a format that can be easily
+                                processed by clients, often in JSON or XML. Clients can request specific representations
+                                of resources by specifying the desired media type in the HTTP headers.</td>
+                        <tr>
+                            <!-- row 6 -->
+                        <tr>
+                            <th>6</th>
+                            <td>Stateless Communication: REST is based on stateless communication, meaning that each
+                                request from the client to the server should contain all the information needed for
+                                processing. This makes it easier to scale the server and handle requests from multiple
+                                clients.</td>
+                        <tr>
+                            <!-- row 7 -->
+                        <tr>
+                            <th>7</th>
+                            <td>Layered System: REST allows for the use of a layered system architecture, where
+                                different components (e.g., load balancers, caches, security layers) can be added
+                                between the client and server without affecting the overall system.</td>
+                        <tr>
+                            <!-- row 8 -->
+                        <tr>
+                            <th>8</th>
+                            <td>Client-Server Separation: REST separates the client and server components, allowing them
+                                to evolve independently. This separation simplifies client and server implementations
+                                and promotes scalability.</td>
+                        <tr>
+                            <!-- row 9 -->
+                        <tr>
+                            <th>9</th>
+                            <td>REST APIs are commonly used for building web services that can be accessed over the
+                                internet, making them a fundamental technology for enabling communication between
+                                different software applications, services, and devices. They are used extensively in web
+                                and mobile app development, IoT (Internet of Things), and integration between various
+                                software systems.</td>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h4 class="text-2xl text-textClr text-center font-semibold">References are collected from Chat GPT v-3.5</h4>
+        <!-- back to home btn -->
+        <div class="text-center">
+            <button onclick="handelHomeBtn()" class="btn btn-ghost font-semibold my-8 text-redTh">back to home</button>
+        </div>
+    </main>
+    <!-- js script -->
+    <script src="js/blogs.js"></script>
+</body>
+
+</html>

@@ -5,11 +5,9 @@ let cardData;
 // millisecond to hour, minute, second
 const millisecondToHour = (time) => {
     if (time) {
-        let second = Math.floor(time / 1000);
-        let minute = Math.floor(second / 60);
+        let minute = Math.floor(time / 60);
         let hour = Math.floor(minute / 60);
 
-        second = second % 60;
         minute = minute % 60;
         hour = hour % 24;
 
@@ -69,7 +67,6 @@ const displayCategoryBtn = (categories) => {
 
 // display cards
 const displayCards = (cardsData) => {
-    // console.log(cardsData);
     cardContainer.textContent = "";
     if (cardsData.length > 0) {
         cardsData.forEach(data => {
@@ -121,6 +118,11 @@ const displayCards = (cardsData) => {
             </div>
         `
     }
+}
+
+// handel blogs btn
+const handelBlogBtn = () => {
+    window.location.href = `blogs.html`;
 }
 
 // loading by default
