@@ -81,7 +81,7 @@ const displayCards = (cardsData) => {
             div.innerHTML = `
         <div class="relative">
             <figure>
-                <img src="${thumbnail}" alt="Shoes" class="h-52 w-full rounded-b-xl rounded-l-xl" />
+                <img src="${thumbnail}" alt="Shoes" class="h-52 w-full rounded-r-xl rounded-b-xl rounded-l-xl" />
             </figure>
             <div class="${others?.posted_date ? "block" : "hidden"} absolute bottom-4 right-4">
                 <p class="bg-minutes text-white p-1 rounded">${time}</p>
